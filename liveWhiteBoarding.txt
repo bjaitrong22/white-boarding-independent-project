@@ -1,0 +1,34 @@
+function compress(inputString){
+	let compressedString ="";
+	let count = 1;
+
+	for( let i = 0; i < inputString.length; i++)
+	{
+		let currentChar = inputString[i];
+		let nextChar = inputString[i + 1];
+		
+		if(currentChar === nextChar)
+			{
+				count++;
+			}
+		else
+			{
+				if(count === 1)
+				{
+					compressedString += currentChar;
+				}
+				else
+				{
+					compressedString += count.toString() + currentChar;
+				}	
+				count = 1;
+      }
+  }
+
+  return compressedString;
+}
+
+let inputString ="aaabccdddda";
+let inputString2="BBBBBbbbtYYIi";
+
+console.log(compress(inputString));
